@@ -165,6 +165,7 @@ BOOL CMatchToolDlg::OnInitDialog()
 	// TODO: 在此加入額外的初始設定
 	
 	namedWindow ("SrcView", WINDOW_AUTOSIZE);
+
 	HWND hWnd = (HWND)cvGetWindowHandle ("SrcView");
 	HWND hParent = (HWND)FindWindow (NULL, L"SrcView");
 	HWND hOrgParent = ::SetParent (hWnd, GetDlgItem (IDC_STATIC_SRC_VIEW)->m_hWnd);
@@ -2028,7 +2029,7 @@ HBRUSH CMatchToolDlg::OnCtlColor (CDC* pDC, CWnd* pWnd, UINT nCtlColor)
 	// TODO:  如果預設值並非想要的，則傳回不同的筆刷
 	return hbr;
 }
-
+#pragma warning(disable : 4996)
 
 void CMatchToolDlg::OnLvnKeydownListMsg (NMHDR *pNMHDR, LRESULT *pResult)
 {

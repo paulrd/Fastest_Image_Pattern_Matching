@@ -2,6 +2,7 @@
 // MatchToolDlg.h: 標頭檔
 //
 #include <opencv2/opencv.hpp>
+#define OPENCV_4X
 #ifdef OPENCV_4X
 #include <opencv2/highgui/highgui_c.h>
 #include <opencv2/imgproc/imgproc_c.h>
@@ -265,7 +266,7 @@ private:
 	Size  GetBestRotationSize (Size sizeSrc, Size sizeDst, double dRAngle);
 	Point2f ptRotatePt2f (Point2f ptInput, Point2f ptOrg, double dAngle);
 	void FilterWithScore (vector<s_MatchParameter>* vec, double dScore);
-	void FilterWithRotatedRect (vector<s_MatchParameter>* vec, int iMethod = CV_TM_CCOEFF_NORMED, double dMaxOverLap = 0);
+	void FilterWithRotatedRect (vector<s_MatchParameter>* vec, int iMethod = TM_CCOEFF_NORMED, double dMaxOverLap = 0);
 	Point GetNextMaxLoc (Mat & matResult, Point ptMaxLoc, Size sizeTemplate, double& dMaxValue, double dMaxOverlap);
 	Point GetNextMaxLoc (Mat & matResult, Point ptMaxLoc, Size sizeTemplate, double& dMaxValue, double dMaxOverlap, s_BlockMax& blockMax);
 	void SortPtWithCenter (vector<Point2f>& vecSort);
